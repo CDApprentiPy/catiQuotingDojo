@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuotingDojo</title>
+    <link rel="stylesheet" href="css/normalize.css"/>
+    <link rel="stylesheet" href="css/skeleton.css"/>
+    <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="twelve columns">
+                <h1>Here are the awesome quotes!</h1>
+            </div>
+        </div>
+        @foreach (var quote in @ViewBag.Quotes)
+        {
+            <div class="row">
+                <div class="twelve columns">
+                    <p>@quote.text</p>
+                    <p>- @quote.name at @quote.created_at.ToString("h:mm tt MMMM dd, yyyy")</p>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>
